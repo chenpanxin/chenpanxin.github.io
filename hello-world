@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+博客搭建，以后就在这里写吧
+---
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换</title>
+<style>
+	#div{
+		width: 400px;
+		height: 400px;
+		margin: 0 auto;
+		border: 1px solid #000;
+		position: relative;
+	}
+	p{
+		width: 400px;
+		margin: 0;
+		background-color: #eee;
+		opacity: 0.8;
+		filter: alpha(opacity=80);
+		position: absolute;
+		text-align: center;
+		height: 20px;
+		line-height: 20px;
+	}
+	#num{
+		top: 0;
+	}
+	#text{
+		bottom: 0;
+	}
+	#div img{
+		width: 100%;
+		height: 100%;
+	}
+	#div span{
+		width: 30px;
+		height: 30px;
+		background: #000;
+		color: #fff;
+		opacity: 0.3;
+		filter: alpha(opacity=30);
+		position: absolute;
+		top: 45%;
+		text-align: center;
+		line-height: 30px;
+		cursor: pointer;
+	}
+	#prev{
+		left: 10px;
+	}
+	#next{
+		right: 10px;
+	}
+	
+</style>
+</head>
+<body>
+
+<input id="btn1" type="button" value="循环切换">
+<input id="btn2" type="button" value="顺序切换">
+<div id="div">
+	<p id="num">数字正在加载中……</p>
+	<p id="text">文字正在加载中……</p>
+	<img id="img" src="" alt="">
+	<span id="prev"><<</span>
+	<span id="next">>></span>
+</div>
+<script>
+	window.onload = function () {
+		var oDiv = document.getElementById('div');
+		var oNum = document.getElementById('num');
+		var oText = document.getElementById('text');
+		var oImg = document.getElementById('img');
+		var oPrev = document.getElementById('prev');
+		var oNext = document.getElementById('next');
+		var oBtn1 = document.getElementById('btn1');
+		var oBtn2 = document.getElementById('btn2');
+
+		var arrUrl = [
+			'img/1.jpg',
+			'img/2.jpg',
+			'img/3.jpg',
+			'img/5.jpg',
+			'img/4.jpg',
+			'img/6.jpg',
+			'img/7.jpg',
+			'img/8.jpg'
+			];
+		var arrText = [
+			'img/1.jpg',
+			'img/2.jpg',
+			'img/3.jpg',
+			'img/5.jpg',
+			'img/4.jpg',
+			'img/6.jpg',
+			'img/7.jpg',
+			'img/8.jpg'
+			];
+		var num = 0;
+		var onOff = true;
+
+
+		oBtn1.onclick = function () {
+			onOff = true;
+			console.log(onOff);
+		}
+		oBtn2.onclick = function () {
+			onOff = false;
+			console.log(onOff);
+		}
+		//初始化
+		function showPic(){
+			oNum.innerHTML = 1+num+'/'+arrUrl.length;
+			oText.innerHTML = arrText[num];
+			oImg.src = arrUrl[num];
+		}
+		showPic();
+
+		//循环切换
+
+			oNext.onclick = function () {
+				if (onOff) {
+					if (num == arrUrl.length-1) {
+						num = 0;
+					}else{
+					num++;
+					}
+					showPic();
+
+				}else{
+					if (num == arrUrl.length-1) {
+						alert('已经最后一张了');
+					}else{
+					num++;
+					showPic();
+					}
+
+
+				}
+			}
+			oPrev.onclick = function () {
+				if (onOff) {
+					if (num == 0) {
+						num = arrUrl.length-1;
+					}else{
+					num--;
+					}
+					showPic();
+
+				}else{
+					if (num == 0) {
+						alert('已经第一张了');
+					}else{
+					num--;
+					showPic();
+					}
+
+
+				}
+			}
+
+	}
+</script>
+</body>
+</html>
+
+```
+
+
+
+
+
+
+
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<h2 id="">博客搭建，以后就在这里写吧</h2>
+
+<pre><code class="javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;图片切换&lt;/title&gt;
+&lt;style&gt;
+    #div{
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+        border: 1px solid #000;
+        position: relative;
+    }
+    p{
+        width: 400px;
+        margin: 0;
+        background-color: #eee;
+        opacity: 0.8;
+        filter: alpha(opacity=80);
+        position: absolute;
+        text-align: center;
+        height: 20px;
+        line-height: 20px;
+    }
+    #num{
+        top: 0;
+    }
+    #text{
+        bottom: 0;
+    }
+    #div img{
+        width: 100%;
+        height: 100%;
+    }
+    #div span{
+        width: 30px;
+        height: 30px;
+        background: #000;
+        color: #fff;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        position: absolute;
+        top: 45%;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+    }
+    #prev{
+        left: 10px;
+    }
+    #next{
+        right: 10px;
+    }
+
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input id="btn1" type="button" value="循环切换"&gt;
+&lt;input id="btn2" type="button" value="顺序切换"&gt;
+&lt;div id="div"&gt;
+    &lt;p id="num"&gt;数字正在加载中……&lt;/p&gt;
+    &lt;p id="text"&gt;文字正在加载中……&lt;/p&gt;
+    &lt;img id="img" src="" alt=""&gt;
+    &lt;span id="prev"&gt;&lt;&lt;&lt;/span&gt;
+    &lt;span id="next"&gt;&gt;&gt;&lt;/span&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    window.onload = function () {
+        var oDiv = document.getElementById('div');
+        var oNum = document.getElementById('num');
+        var oText = document.getElementById('text');
+        var oImg = document.getElementById('img');
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+
+        var arrUrl = [
+            'img/1.jpg',
+            'img/2.jpg',
+            'img/3.jpg',
+            'img/5.jpg',
+            'img/4.jpg',
+            'img/6.jpg',
+            'img/7.jpg',
+            'img/8.jpg'
+            ];
+        var arrText = [
+            'img/1.jpg',
+            'img/2.jpg',
+            'img/3.jpg',
+            'img/5.jpg',
+            'img/4.jpg',
+            'img/6.jpg',
+            'img/7.jpg',
+            'img/8.jpg'
+            ];
+        var num = 0;
+        var onOff = true;
+
+
+        oBtn1.onclick = function () {
+            onOff = true;
+            console.log(onOff);
+        }
+        oBtn2.onclick = function () {
+            onOff = false;
+            console.log(onOff);
+        }
+        //初始化
+        function showPic(){
+            oNum.innerHTML = 1+num+'/'+arrUrl.length;
+            oText.innerHTML = arrText[num];
+            oImg.src = arrUrl[num];
+        }
+        showPic();
+
+        //循环切换
+
+            oNext.onclick = function () {
+                if (onOff) {
+                    if (num == arrUrl.length-1) {
+                        num = 0;
+                    }else{
+                    num++;
+                    }
+                    showPic();
+
+                }else{
+                    if (num == arrUrl.length-1) {
+                        alert('已经最后一张了');
+                    }else{
+                    num++;
+                    showPic();
+                    }
+
+
+                }
+            }
+            oPrev.onclick = function () {
+                if (onOff) {
+                    if (num == 0) {
+                        num = arrUrl.length-1;
+                    }else{
+                    num--;
+                    }
+                    showPic();
+
+                }else{
+                    if (num == 0) {
+                        alert('已经第一张了');
+                    }else{
+                    num--;
+                    showPic();
+                    }
+
+
+                }
+            }
+
+    }
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "hello-world";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
